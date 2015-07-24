@@ -68,19 +68,24 @@ function fly(robot){
         bot.drone.left(0.5)
     });
 
-    after(15*1000, function(){
+    after(14.9*1000, function(){
+        bot.drone.left(0);
         bot.drone.up(0.5);
+
     });
 
-    after(15.8*1000, function(){
+    after(16*1000, function(){
+        bot.drone.up(0);
         bot.drone.back(0.5);
     })
 
-    after(16.8*1000, function(){
-        bot.drone.down(0.5)
+    after(17.2*1000, function(){
+        bot.drone.back(0);
+        bot.drone.down(0.5);
     });
 
-    after(18*1000, function(){
+    after(18.2*1000, function(){
+        bot.drone.down(0)
         bot.drone.land()
     })
 
