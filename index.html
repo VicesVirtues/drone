@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>drone</title>
+    <link rel="stylesheet"href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <script src="lib/jquery.js"></script>
+    <script src="lib/tracking.js"></script>
+    <script src="drone-frontend.js"></script>
+    <script src="colorTrackerUtils.js"></script>
+
+
+    <style>
+        img, canvas {
+            position: absolute;
+        }
+    </style>
+</head>
+
+<body class="container">
+<h1 class="text-center">This is our Drone</h1>
+<div id="example" class="row">
+    <img class="drone" id="imageToTrack" src="snapshots/camera3.png" width="640" height="360"/>
+    <canvas class="canvas" width="640" height="360" id="droneCanvas"></canvas>
+    <div class="col-md-4">
+        <h2>Our Drone's View</h2>
+        <div class="output">
+            Colours!
+        </div>
+    </div>
+</div>
+</body>
+</html>
