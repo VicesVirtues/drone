@@ -10,7 +10,7 @@ Cylon.robot()
         driver: "ardrone",
         connection: "ardrone"
     })
-    device("nav",{
+    .device("nav",{
         driver:"ardrone-nav",
         connection: "ardrone"
     })
@@ -26,11 +26,11 @@ function fly(robot){
 
     });
 
-    bot.nav.on(altitudeChange, function(data){
-        if(altitude< 1.5){
+    /*bot.nav.on("altitudeChange", function(data){
+        if(data > 1.5){
             bot.drone.land();
         }
-    });
+    });*/
 
     bot.nav.on("batteryChange", function(data){
         console.log("Battery level:", data);
@@ -42,10 +42,30 @@ function fly(robot){
 
     bot.drone.takeoff();
 
-    after(10*1000,function(){
-        bot.drone.land();
+    after((1.5).seconds(), function(){
+        my.drone.up(0.5);
     });
-    after(15*1000,function(){
+
+    after((2.5).seconds(), function(){
+        my.drone.stop();
+    });
+
+    after((2.6).seconds(), function(){
+        my.drone.left(0.5);
+    });
+
+    after((4).seconds(), function(){
+        my.drone.stop();
+    });
+
+    after((4.1).seconds(), function(){
+        my.drone.land
+    })
+
+    /*after(10*1000,function(){
+        bot.drone.land();
+    });*/
+    after((4.7).seconds(),function(){
         bot.drone.stop();
     });
 }
