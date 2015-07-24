@@ -27,10 +27,10 @@ function fly(robot){
     });
 
     /*bot.nav.on("altitudeChange", function(data){
-        if(data > 1.5){
-            bot.drone.land();
-        }
-    });*/
+     if(data > 1.5){
+     bot.drone.land();
+     }
+     });*/
 
     bot.nav.on("batteryChange", function(data){
         console.log("Battery level:", data);
@@ -42,38 +42,52 @@ function fly(robot){
 
     bot.drone.takeoff();
 
-    after(1*1000, function(){
+    after(6*1000, function(){
         bot.drone.up(0.5);
-    });
-
-    after(3*1000, function(){
-        bot.drone.stop();
-    });
-
-    after(4*1000, function(){
-        bot.drone.right(0.5);
-    });
-
-    after(7*1000, function(){
-        bot.drone.stop();
+        bot.drone.front(0.2);
     });
 
     after(8*1000, function(){
-        bot.drone.front(0.5);
+        bot.drone.hover();
     });
 
     after(9*1000, function(){
-       bot.drone.left(0.5)
+        bot.drone.right(0.5);
     });
 
-    after(12*1000, function(){
-        bot.drone.land
+    after(10.5*1000, function(){
+        bot.drone.hover();
     });
+
+    after(13*1000, function(){
+        bot.drone.front(0.5);
+    });
+
+    after(14*1000, function(){
+        bot.drone.front(0);
+        bot.drone.left(0.5)
+    });
+
+    after(15*1000, function(){
+        bot.drone.up(0.5);
+    });
+
+    after(15.8*1000, function(){
+        bot.drone.back(0.5);
+    })
+
+    after(16.8*1000, function(){
+        bot.drone.down(0.5)
+    });
+
+    after(18*1000, function(){
+        bot.drone.land()
+    })
 
     /*after(10*1000,function(){
-        bot.drone.land();
-    });*/
-    after((4.7).seconds(),function(){
+     bot.drone.land();
+     });*/
+    after(20*1000,function(){
         bot.drone.stop();
     });
 }
