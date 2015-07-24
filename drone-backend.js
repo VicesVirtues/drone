@@ -42,31 +42,31 @@ function fly(robot){
 
     bot.drone.takeoff();
 
-    after((1.5).seconds(), function(){
+    after(1*1000, function(){
         bot.drone.up(0.5);
     });
 
-    after((3).seconds(), function(){
+    after(3*1000, function(){
         bot.drone.stop();
     });
 
-    after((3.1).seconds(), function(){
+    after(4*1000, function(){
         bot.drone.right(0.5);
     });
 
-    after((6.1).seconds(), function(){
+    after(7*1000, function(){
         bot.drone.stop();
     });
 
-    after((6.2).seconds(), function(){
+    after(8*1000, function(){
         bot.drone.front(0.5);
     });
 
-    after((7.5).seconds(), function(){
+    after(9*1000, function(){
        bot.drone.left(0.5)
     });
 
-    after((9.1).seconds(), function(){
+    after(12*1000, function(){
         bot.drone.land
     });
 
